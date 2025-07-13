@@ -23,13 +23,13 @@ export const Ambush : Challenge = {
 export const Master : Challenge ={
 	name: 'Master',
 	difficulty: DF_STEP_MED,
-	description: `<strong>Setup:</strong> Each player discards encounter cards until they reveal a minion. Engage that minion, but ignore any of its "When Revealed" or Surge effects.`
+	description: `<strong>Setup:</strong> Each player discards encounter cards until they discard a minion. Engage that minion, but ignore any of its "When Revealed" or Surge effects.`
 }
 
 export const Tenacious : Challenge = {
 	name: 'Tenacious',
 	difficulty: DF_STEP_LARGE,
-	description: `<strong>Setup:</strong> Place an acceleration token on the main scheme.`
+	description: `<strong>Setup:</strong> Place an 1 acceleration token per player on the main scheme.`
 }
 
 export const Dangerous : Challenge = {
@@ -38,12 +38,55 @@ export const Dangerous : Challenge = {
 	description: `<strong>Setup:</strong> Deal each player an encounter card.`
 }
 
+export const ColdRevenge : Challenge = {
+	name: "Cold Revenge",
+	difficulty: DF_STEP_MED + 1,
+	description: `Each time you kill a minion, add 1 threat on a scheme.`
+}
+
+
+export const OverTheTop : Challenge = {
+	name: "Over the Top",
+	difficulty: DF_STEP_MED + 1,
+	description: `Each time a villain kills an ally, take 1 damage.`
+}
+
+export const MassPanic : Challenge = {
+	name: "Mass Panic",
+	difficulty: DF_STEP_MED,
+	description: `Upgrade, Supports and Allies enter game exhausted.`
+}
+
+export const Isolation : Challenge = {
+	name: "Isolation",
+	difficulty: DF_STEP_SMALL,
+	description: `Reduce your ally limit by 1`
+}
+
+export const AlwaysScheming = {
+	name: "Always Scheming",
+	difficulty: DF_STEP_MED,
+	description: `Each side scheme gains Hazard icon. If it already has, it gains Acceleration icon instead.`
+}
+
+export const TheSnap = {
+	name: "The Snap",
+	difficulty: DF_STEP_MED,
+	description: `<strong>Setup:</strong> Discard half of your deck.`
+}
+
 export const ChallengesList = [Devious,
 	Resilient,
 	Ambush,
 	Master,
 	Tenacious,
 	Dangerous,
+	ColdRevenge,
+	OverTheTop,
+	MassPanic,
+	Isolation,
+	AlwaysScheming,
+	TheSnap
 ]
 
 export const randomChallenge = () : Challenge => {

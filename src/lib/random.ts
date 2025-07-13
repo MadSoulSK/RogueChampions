@@ -36,6 +36,7 @@ export function randomItemsExcluding<T extends number | string> (
 	num : number,
 	possible : T[],
 	excluding : T[],
+	extraChance: T[],
 	deprioritize : T[] = [],
 	rnd: () => number = Math.random
 ) : T[] {
@@ -70,6 +71,26 @@ export function randomItemsExcluding<T extends number | string> (
 		picked.push(item)
 		clonePossible.splice(index, 1)
 	}
+
+	//gives 25% chance to add an item from extra change list. Use mainly to increase possibility of heroic upgrades
+	if(extraChance.length > 0)
+	{
+		let randNum : number
+		randNum = getRandomInt(0, 100)
+		if(randNum < 25)
+		{
+			console.log("Extra change!")
+			randNum = getRandomInt(0, extraChance.length - 1)
+			let item = extraChance[randNum]
+			if (!picked.includes(item) && !excludeClone.includes(item)) {
+				console.log("Passed!")
+				randNum = getRandomInt(0, num - 1)
+				picked[randNum] = item
+			}
+
+		}
+	}
+
 	return picked
 }
 

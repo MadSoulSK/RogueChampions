@@ -57,10 +57,15 @@ export const generateUpgradeOptions  = (player: Player, expansions: Expansion[],
 		return true
 	})
 
+	let heroUps = possibleUps.filter((upgrade: Upgrade) => {
+		return upgrade.category == "Heroic"
+	})
+
 	const names = possibleUps.map(x => x.name)
 	const existing =  player.upgrades.map(x => x.name)
+	const heroUpNames = heroUps.map(x => x.name)
 
-	const selected = randomItemsExcluding<string>(3, names, existing)
+	const selected = randomItemsExcluding<string>(3, names, existing, heroUpNames)
 	const upgrades = selected.map((name) : Upgrade => {
 		const up = UpgradesMap[name]
 
@@ -95,7 +100,13 @@ export function generateUpgradeCard (def: UpgradeCard) : Upgrade {
 		level: 1,
 		description () {
 			const article = def.article ? (def.article + ' ') : ''
-			const attached = def.attached ? ' attached to your hero' : ''
+			let attached = ""
+			if(def.attachedToHero)
+				attached = ' attached to your hero';
+			if(def.attachedToVillain)
+				attached = ' attached to the villain';
+			if(def.attachedToMainScheme)
+				attached = ' attached to the main scheme';
 			const exhausted = def.exhausted ? ' Exhaust ' + def.card +'.': ''
 			let msg = `<strong>Setup:</strong> Put ${article}<strong>${def.card}</strong> into play${attached}.${exhausted}`
 			const extras = this.level - 1
@@ -190,6 +201,66 @@ export function generateCounterCardInPlay (def: CardInPlayExtraCounters) : Upgra
 	return upgrade
 }
 
+export function generateModifiedCounterCardInPlay(def: CardInPlayExtraCounters) : Upgrade {
+let maxLevel = def.maxLevel
+
+	// If no max level has been provided, but we have defined the extra counters you would
+	// get at each level, then we can use that to determine max level
+	if (!def.maxLevel && def.extraCounters && typeof def.extraCounters == 'object') {
+		def.maxLevel = Object.keys(def.extraCounters).length
+	}
+
+	const upgrade = {
+		name: def.name,
+		getExtraCounters (level: number) {
+			return def.extraCounters[level] || 0
+		},
+		extraCountersMsg (extraCounters: number) {
+			const extra = extraCounters == 1 ||  extraCounters == -1  ? '' : (Math.abs(extraCounters) + ' ')
+			if (extraCounters == 1) {
+				return `Put an extra counter on ` + def.pronoun + '.'
+			}else if(extraCounters == -1) {
+				return "Remove a starting counter from " + def.pronoun + "."
+			}else if(extraCounters < -1) {
+				return 'Remove ' + extra  + ' starting counters from ' + def.pronoun + '.'
+			}
+			return 'Put ' + extra + ' extra counters on ' + def.pronoun + '.'
+		},
+		level: 1,
+		maxLevel: def.maxLevel,
+		description () {
+			let desc : string = cardInPlay(def.card, def.exhausted, def.article, def.they)
+			const extraCounters = this.getExtraCounters(this.level)
+			if (extraCounters != 0) {
+				desc += ' ' + this.extraCountersMsg(extraCounters)
+			}
+			return desc
+		},
+		requires: def.requires,
+		requiresHero: def.requiresHero,
+		levelUpMessage () {
+			const currentCounters = this.getExtraCounters(this.level)
+			const newCounters = this.getExtraCounters(this.level+1)
+			if (currentCounters == 0 && newCounters > 0) {
+				return this.extraCountersMsg(newCounters)
+			}
+			if(currentCounters < 0 && newCounters < 0){
+				return `Instead of ${currentCounters}, remove only <strong>${newCounters}</strong>`
+			}
+			if(currentCounters < 0 && newCounters == 0){
+				return `Do not remove any counters.`
+			}
+			if(currentCounters < 0 && newCounters > 0){
+				return `Instead of removing ${currentCounters} <strong>add ${newCounters}</strong>`
+			}
+			return `Extra counters: ${currentCounters} becomes <strong>${newCounters}</strong>`
+		},
+		category: defCategory(def),
+		conflictingHeroes: def.conflictingHeroes
+	}
+	return upgrade
+}
+
 export function generateAllyCard (def: MinionCard) : Upgrade {
 	const upgrade = {
 		name: def.name,
@@ -245,6 +316,34 @@ export function generateAllyCard (def: MinionCard) : Upgrade {
 		conflictingHeroes: def.conflictingHeroes
 	}
 	return upgrade
+}
+
+export function generateAllyWithHandEffectCard(def: MinionCard & {
+	effectAtLevel: number
+}) : Upgrade {
+	const base = generateAllyCard(def)
+
+	return {
+		...base,
+
+		description () {
+			let desc = base.description.call(this)
+			if (this.level >= def.effectAtLevel) {
+				desc += `Trigger effect as the card was played from hand.`
+			}
+			return desc
+		},
+
+		levelUpMessage () {
+			const baseMsg = base.levelUpMessage.call(this)
+			const nextLevel = this.level + 1
+			let extra = ''
+			if (nextLevel === def.effectAtLevel) {
+				extra = `Trigger effect as the card was played from hand.`
+			}
+			return [baseMsg, extra].join(' ')
+		}
+	}
 }
 
 export function cardInPlay(card: string, exhausted = false, article = 'a', they = 'It') : string {

@@ -1,5 +1,5 @@
 import {CoreSet} from "@/consts/expansions";
-import {BlackPanther, IronMan} from "@/consts/heroes";
+import {BlackPanther} from "@/consts/heroes";
 import {generateExhaustedCardInPlay, generateUpgradeCard} from "@/lib/upgrades";
 
 function upgrade (name: string) {

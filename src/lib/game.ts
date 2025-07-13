@@ -57,7 +57,8 @@ export const generateGame = (villain: Villain) : Game => {
 		return set
 	})
 
-	if (!villain.noExtraSets) {
+	var neededSets = villain.additionalSets;
+	if (neededSets > 0) {
 		// Each game gets one random encounter automatically
 		// We loop until we find one that ISN'T part of their villain's base encounter set
 		let randomSet : EncounterSet
@@ -67,6 +68,8 @@ export const generateGame = (villain: Villain) : Game => {
 			randomSet = randomItem(EncounterSetsList)
 		} while(randomSet.boss || sets.findIndex(s => s.name == randomSet.name) != -1 && noLoop < 10000)
 		sets.push(randomSet)
+		if(!randomSet.dontCount) //to ignore sets like Lonshot or Expert
+			neededSets--
 	}
 
 	// If expert isn't in there, there's a 10% chance to add it
@@ -114,7 +117,7 @@ export const generateGames = () : Game[] => {
 	const possibleVillainKeys = VillainsList.map((v : Villain) => v.key)
 	const numGames = 4
 
-	const villainKeys : string[] = randomItemsExcluding<string>(numGames, possibleVillainKeys, [])
+	const villainKeys : string[] = randomItemsExcluding<string>(numGames, possibleVillainKeys, [], [])
 
 	const games : Game[] = []
 
