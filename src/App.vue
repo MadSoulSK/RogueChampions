@@ -56,6 +56,7 @@
     <div id="footer">
       <a href="https://github.com/ShalePumpkin/RogueChampions">GitHub</a> - Initially Developed by <a href="./about-the-author.html">ShalePumpkin</a>
 			<!-- Forking this? Put your links here! -->
+      <br />Continued development (2025) here <a href="https://github.com/MadSoulSK/RogueChampions">GitHub</a> by MadSoulSK - Progressing 
       <br />Background is <a href="https://www.vecteezy.com/free-vector/comic">Comic Vectors by Vecteezy</a>
       <br />Favicon is <a href="https://game-icons.net/1x1/lorc/punch-blast.html">Punch Blast</a> by <a href="http://lorcblog.blogspot.com/">Lorc</a> under <a href="http://creativecommons.org/licenses/by/3.0/" rel="license">CC BY 3.0</a>
     </div>
