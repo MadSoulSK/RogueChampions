@@ -32,7 +32,9 @@ export type UpgradeCard = {
 	name: string
 	article?: string
 	requiresHero?: string
-	attached?: boolean
+	attachedToHero?: boolean
+	attachedToVillain?: boolean
+	attachedToMainScheme?: boolean
 	category?: UpgradeCategory
 	copies?: number
 	exhausted?: boolean

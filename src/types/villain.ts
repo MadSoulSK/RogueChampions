@@ -3,5 +3,5 @@ export type Villain = {
 	difficulty: number
 	key: string
 	sets: string[],
-	noExtraSets?: boolean // Basically only for Wrecking Crew
+	additionalSets: number,
 }
