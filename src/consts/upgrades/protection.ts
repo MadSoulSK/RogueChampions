@@ -1,6 +1,6 @@
-import {CoreSet} from "@/consts/expansions";
+import {CoreSet, GalaxysMostWanted} from "@/consts/expansions";
 import {generateCounterCardInPlay, generateAllyCard, generateUpgradeCard, generateExhaustedCardInPlay} from "@/lib/upgrades";
-import { BlackWidow, DoctorStrange, Hulk, MsMarvel, Quicksilver } from "../heroes";
+import { BlackWidow, DoctorStrange, Drax, Hulk, MsMarvel, Quicksilver } from "../heroes";
 
 export const MedTeam = generateCounterCardInPlay({
 	name: 'Family Doctor',
@@ -151,4 +151,86 @@ export const NervesOfSteel = generateExhaustedCardInPlay({
 	pronoun: "it"
 })
 
-export const Upgrades = [ArmoredVest, BlackWidowAlly, MedTeam, EnergyBarrier, NovaAlly, DefensiveStance, IronfistAlly, CleatAlly, TheNightNurse, Unflappable, ElectrostaticArmor, NervesOfSteel]
+export const StarhawkAlly = generateAllyCard({
+	name: 'Orbiting Ally',
+	requires: GalaxysMostWanted.name,
+	card: 'StarhawkAlly',
+	category: 'Protection',
+	pronoun: "him",
+	levels: [
+		{
+			exhausted: true,
+			damage: 0
+		},
+		{
+			exhausted: false,
+			damage: 0
+		}
+	]
+})
+
+export const Dauntless = generateUpgradeCard({
+	name: 'Face-Tank Flex',
+	requires: GalaxysMostWanted.name,
+	card: 'Dauntless',
+	article: 'a',
+	category: "Protection",
+})
+
+export const HardToIgnore = generateUpgradeCard({
+	name: 'Easy to Accept',
+	requires: GalaxysMostWanted.name,
+	card: 'Hard to Ignore',
+	article: 'a',
+	category: "Protection",
+	copies: 3
+})
+
+export const Indomitable = generateUpgradeCard({
+	name: 'Still Standing',
+	requires: GalaxysMostWanted.name,
+	card: 'Indomitable',
+	article: 'a',
+	category: "Protection",
+	copies: 3
+})
+
+export const MartyrAlly = generateAllyCard({
+	card: "Martyr",
+	requires: Drax.name,
+	name: "Tough Alien",
+	pronoun: "she",
+	category: "Protection",
+	levels: [{
+		damage: 2,
+		exhausted : false
+	},{
+		damage: 1,
+		exhausted : false
+	},{
+		damage: 0,
+		exhausted : false
+	}],
+})
+
+export const MoondragonAlly = generateAllyCard({
+	card: "Moondragon",
+	requires: Drax.name,
+	name: "Enemy vs my enemy",
+	pronoun: "she",
+	category: "Protection",
+	levels: [{
+		damage: 1,
+		exhausted : true
+	},{
+		damage: 1,
+		exhausted : false
+	},{
+		damage: 0,
+		exhausted : false
+	}],
+})
+
+
+export const Upgrades = [ArmoredVest, BlackWidowAlly, MedTeam, EnergyBarrier, NovaAlly, DefensiveStance, IronfistAlly, CleatAlly, TheNightNurse, Unflappable, ElectrostaticArmor, NervesOfSteel, StarhawkAlly, Dauntless, HardToIgnore, 
+	Indomitable, MartyrAlly, MoondragonAlly]

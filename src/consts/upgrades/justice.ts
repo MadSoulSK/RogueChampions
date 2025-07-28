@@ -1,6 +1,6 @@
 import {CoreSet, RiseOfRedSkull} from "@/consts/expansions";
-import {generateCounterCardInPlay, generateUpgradeCard, generateAllyCard, generateExhaustedCardInPlay} from "@/lib/upgrades";
-import { BlackWidow, Hulk, Quicksilver, Thor } from "../heroes";
+import {generateCounterCardInPlay, generateUpgradeCard, generateAllyCard, generateExhaustedCardInPlay, generateModifiedCounterCardInPlay} from "@/lib/upgrades";
+import { AgentVenom, BlackWidow, Hulk, Quicksilver, Thor } from "../heroes";
 
 export const SurveillanceTeam = generateCounterCardInPlay({
 	name: 'Trusty Spies',
@@ -82,4 +82,35 @@ export const SenseOfJustice = generateUpgradeCard({
 	category: 'Justice',
 })
 
-export const Upgrades = [SurveillanceTeam, HeroicIntuition, UnderSurveillance, CounterIntelligence, QuakeAlly, BeatCop, SkilledInvestigator, SenseOfJustice]
+export const JackFlagAlly = generateAllyCard({
+	card: "Jack Flag",
+	requires: AgentVenom.name,
+	name: "Bannerlord",
+	pronoun: "he",
+	levels: [{
+		damage: 2,
+		exhausted: true,
+	}, {
+		damage: 1,
+		exhausted: false,
+	}, {
+		damage: 0,
+		exhausted: false,
+	}],
+	category: "Justice"
+})
+
+export const SonicRifle = generateModifiedCounterCardInPlay({
+	card: "Sonic Rifle",
+	requires: AgentVenom.name,
+	name: "I love the sound of...",
+	extraCounters: {
+		0 : -1,
+		1 : 0,
+		2 : 1
+	},
+	pronoun: "",
+	category: 'Justice',
+})
+
+export const Upgrades = [SurveillanceTeam, HeroicIntuition, UnderSurveillance, CounterIntelligence, QuakeAlly, BeatCop, SkilledInvestigator, SenseOfJustice, JackFlagAlly, SonicRifle]

@@ -117,6 +117,30 @@ export const Groot : Hero = {
 	startingHP: 10,
 }
 
+export const StarLord : Hero = {
+	name: 'Star-Lord',
+	requires: "Star-Lord",
+	startingHP: 10,
+}
+
+export const Gamora : Hero = {
+	name: 'Gamora',
+	requires: "Gamora",
+	startingHP: 10,
+}
+
+export const Drax : Hero = {
+	name: 'Drax',
+	requires: "Drax",
+	startingHP: 14,
+}
+
+export const AgentVenom : Hero = {
+	name: 'Agent Venom',
+	requires: "Agent Venom",
+	startingHP: 12,
+}
+
 
 export const HeroesMap : Record<string, Hero> = {
 	[AntMan.name]: AntMan,
@@ -137,7 +161,11 @@ export const HeroesMap : Record<string, Hero> = {
 	[Thor.name]: Thor,
 	[Wasp.name]: Wasp,
 	[Groot.name]: Groot,
-	[RocketRacoon.name]: RocketRacoon
+	[RocketRacoon.name]: RocketRacoon,
+	[StarLord.name]: StarLord,
+	[Gamora.name]: Gamora,
+	[Drax.name]: Drax,
+	[AgentVenom.name]: AgentVenom
 }
 
 export const HeroesList = Object.keys(HeroesMap).

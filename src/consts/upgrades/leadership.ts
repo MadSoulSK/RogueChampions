@@ -1,6 +1,6 @@
 import {AntMan, CaptainAmerica, CoreSet, RiseOfRedSkull} from "@/consts/expansions";
 import {generateAllyCard, generateCounterCardInPlay, generateExhaustedCardInPlay, generateUpgradeCard} from "@/lib/upgrades";
-import {BlackWidow, Hawkeye} from "@/consts/heroes";
+import {BlackWidow, Hawkeye, StarLord} from "@/consts/heroes";
 
 export const TheTriskelion = generateUpgradeCard({
 	name: 'Forward HQ',
@@ -183,5 +183,63 @@ export const TeamTraining = generateUpgradeCard({
 	category: 'Leadership'
 })
 
+export const BetaRayBillAlly = generateAllyCard({
+	card: "Beta Ray Bill",
+	requires: StarLord.name,
+	name: "Beta Lightning",
+	pronoun: "he",
+	category: "Leadership",
+	levels: [{
+		damage: 3,
+		exhausted : false
+	},{
+		damage: 2,
+		exhausted : false
+	},{
+		damage: 1,
+		exhausted : false
+	},{
+		damage: 0,
+		exhausted : false
+	}]
+})
 
-export const Upgrades = [IKnowAHawkeye, WonderManAlly, TheTriskelion, Quinjet, RapidResponse, GoliathAlly, BlackKnightAlly, HawkeyeKateAlly, USAgentAlly, TeamTraining, GiantManAlly, RoninAlly, StingerAlly]
+export const YonduAlly = generateAllyCard({
+	card: "Yondu",
+	requires: StarLord.name,
+	name: "Space Hawkeye",
+	pronoun: "he",
+	category: "Leadership",
+	levels: [{
+		damage: 1,
+		exhausted : true
+	},{
+		damage: 0,
+		exhausted : true
+	},{
+		damage: 0,
+		exhausted : false
+	}],
+})
+
+export const AdamWarlockAlly = generateAllyCard({
+	card: "Adam Warlock",
+	requires: StarLord.name,
+	name: "Locked War",
+	pronoun: "he",
+	category: "Leadership",
+		levels: [{
+		damage: 2,
+		exhausted : false
+	},{
+		damage: 1,
+		exhausted : false
+	},{
+		damage: 0,
+		exhausted : false
+	}],
+})
+
+
+export const Upgrades = [IKnowAHawkeye, WonderManAlly, TheTriskelion, Quinjet, RapidResponse, GoliathAlly, BlackKnightAlly, HawkeyeKateAlly, USAgentAlly, TeamTraining, GiantManAlly, 
+	RoninAlly, StingerAlly, BetaRayBillAlly, YonduAlly, AdamWarlockAlly]

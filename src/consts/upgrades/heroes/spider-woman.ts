@@ -1,6 +1,6 @@
 import {generateAllyCard, generateExhaustedCardInPlay, generateUpgradeCard} from "@/lib/upgrades";
-import {CoreSet, RiseOfRedSkull} from "@/consts/expansions";
-import {CaptainAmerica, CaptainMarvel, SpiderWoman} from "@/consts/heroes";
+import {RiseOfRedSkull} from "@/consts/expansions";
+import {CaptainMarvel, SpiderWoman} from "@/consts/heroes";
 
 
 export const Finesse = generateUpgradeCard({
