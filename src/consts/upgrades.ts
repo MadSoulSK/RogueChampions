@@ -20,6 +20,9 @@ import {Upgrades as antMan} from "@/consts/upgrades/heroes/antMan";
 import {Upgrades as wasp} from "@/consts/upgrades/heroes/wasp"; 
 import {Upgrades as rocketracoon } from "@/consts/upgrades/heroes/rocketracoon";
 import {Upgrades as groot } from "@/consts/upgrades/heroes/groot";
+import {Upgrades as starlord } from "@/consts/upgrades/heroes/starlord";
+import {Upgrades as gamora } from "@/consts/upgrades/heroes/gamora";
+import {Upgrades as drax } from "@/consts/upgrades/heroes/drax";
 
 import {Upgrade, UpgradeCategory} from "@/types/upgrade";
 
@@ -52,6 +55,9 @@ addUpgrades(antMan)
 addUpgrades(wasp)
 addUpgrades(rocketracoon)
 addUpgrades(groot)
+addUpgrades(starlord)
+addUpgrades(gamora)
+addUpgrades(drax)
 
 export const UpgradesList = Object.keys(UpgradesMap).map(key => {
 	return UpgradesMap[key]

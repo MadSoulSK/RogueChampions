@@ -1,7 +1,7 @@
-import {CoreSet, RiseOfRedSkull} from "@/consts/expansions";
+import {CoreSet, GalaxysMostWanted, RiseOfRedSkull} from "@/consts/expansions";
 import {generateExhaustedCardInPlay, levelUpMessageIncrease, generateModifiedCounterCardInPlay, generateUpgradeCard, generateAllyCard, generateAllyWithHandEffectCard} from "@/lib/upgrades";
 import {Upgrade, UpgradeCategory} from "@/types/upgrade";
-import { AntMan, BlackWidow, CaptainAmerica, Hulk, MsMarvel, Quicksilver, SpiderMan, Thor, Wasp } from "../heroes";
+import { AgentVenom, AntMan, BlackWidow, CaptainAmerica, Drax, Hulk, MsMarvel, Quicksilver, SpiderMan, StarLord, Thor, Wasp } from "../heroes";
 
 export const Helicarrier = generateExhaustedCardInPlay({
 	name: 'Pilot\'s License',
@@ -248,6 +248,86 @@ export const AdrenalineRush = generateUpgradeCard({
 	copies: 3
 })
 
+export const BoosterBoots = generateExhaustedCardInPlay({
+	card: "Booster Boots",
+	requires: GalaxysMostWanted.name,
+	name: "Kickstart",
+	pronoun: "it",
+	category: "General",
+})
+
+export const DeftFocus = generateUpgradeCard({
+	name: 'Zeroed In',
+	requires: GalaxysMostWanted.name,
+	card: 'Deft Focus',
+	article: 'a',
+	category: 'General',
+	attachedToHero: true,
+	copies: 3
+})
+
+export const CosmoAlly = generateAllyCard({
+	card: "Cosmo",
+	requires: StarLord.name,
+	name: "Guardian's Best Friend",
+	pronoun: "he",
+	category: "General",
+	levels: []
+})
+
+export const Citt = generateExhaustedCardInPlay({
+	card: "C.I.T.T.",
+	requires: StarLord.name,
+	name: "Interstellar Travel",
+	pronoun: "it",
+	category: "General",
+})
+
+export const PulseGrenade = generateUpgradeCard({
+	card: "Pulse Grenade",
+	requires: StarLord.name,
+	name: "Fireworks!",
+	copies: 3,
+	category: "General",
+})
+
+export const AthleticConditioning = generateUpgradeCard({
+	card: "AthleticConditioning",
+	requires: Drax.name,
+	name: "Constitution Saving Throw",
+	copies: 1,
+	category: "General",
+})
+
+export const StarLordAlly = generateAllyCard({
+	card: "Star-Lord",
+	requires: AgentVenom.name,
+	name: "Captain Peter Sparrow",
+	pronoun: "he",
+	category: "General",
+	levels: [{
+		damage: 1,
+		exhausted: false,
+	}, {
+		damage: 0,
+		exhausted : false
+	}],
+})
+
+export const SideHolster = generateUpgradeCard({
+	card: "Side Holster",
+	requires: AgentVenom.name,
+	name: "License to Kill",
+	category: "General"
+})
+
+export const PlasmaPistol = generateUpgradeCard({
+	card: "Plasma Pistol",
+	requires: AgentVenom.name,
+	name: "Hot-shot",
+	category: "General"
+})
+
 export const Upgrades = [
 	KnowYourEnemy,
 	Helicarrier,
@@ -264,4 +344,13 @@ export const Upgrades = [
 	WarMachineALly,
 	SpiderManMMALly,
 	CivicDuty,
+	BoosterBoots,
+	DeftFocus,
+	CosmoAlly,
+	Citt,
+	PulseGrenade,
+	AthleticConditioning,
+	StarLordAlly,
+	SideHolster,
+	PlasmaPistol
 ]

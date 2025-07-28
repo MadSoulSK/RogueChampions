@@ -1,6 +1,6 @@
-import {CoreSet, ExpansionsMap, RiseOfRedSkull} from "@/consts/expansions";
+import {CoreSet, ExpansionsMap, GalaxysMostWanted, RiseOfRedSkull} from "@/consts/expansions";
 import {generateAllyCard, generateCounterCardInPlay, generateExhaustedCardInPlay, generateUpgradeCard} from "@/lib/upgrades";
-import { BlackWidow, Hulk, Quicksilver, Thor, Wasp } from "../heroes";
+import { BlackWidow, Hulk, Quicksilver, Thor, Wasp, Gamora} from "../heroes";
 
 export const ValhallasBlessing = generateCounterCardInPlay({
 	name: 'Valhalla\'s Blessing',
@@ -152,6 +152,52 @@ export const BruteForce = generateUpgradeCard({
 	attachedToHero: true
 })
 
+export const BugAlly = generateAllyCard({
+	name: 'Squash you like a Bug',
+	card: 'Bug',
+	pronoun: 'him',
+	requires: GalaxysMostWanted.name,
+	levels: [{
+		damage: 1,
+		exhausted: false,
+	}, {
+		damage: 0,
+		exhausted: false,
+	}],
+	category: 'Aggression',
+})
+
+export const FollowThrough = generateUpgradeCard({
+	name: 'Finish Him!',
+	requires: GalaxysMostWanted.name,
+	card: 'Follow Through',
+	article: 'an',
+	category: 'Aggression',
+	attachedToHero: true,
+	copies: 3
+})
+
+export const HandCannon = generateCounterCardInPlay({
+	name: 'Boomstick Lite',
+	requires: GalaxysMostWanted.name,
+	card: 'Hand Cannon',
+	article: 'an',
+	category: 'Aggression',
+	extraCounters: {
+		1: 0,
+		2: 1,
+		3: 2
+	},
+	pronoun: "it"
+})
+
+export const Godslayer = generateExhaustedCardInPlay({
+	card: "Godslayer",
+	requires: Gamora.name,
+	name: "Narsil",
+	pronoun: "it"
+})
+
 export const Upgrades = [
 	ValhallasBlessing,
 	CombatTraining,
@@ -164,5 +210,9 @@ export const Upgrades = [
 	MartialProwess,
 	LieInWait,
 	Bootcamp,
-	BruteForce
+	BruteForce,
+	BugAlly,
+	FollowThrough,
+	HandCannon,
+	Godslayer
 ]

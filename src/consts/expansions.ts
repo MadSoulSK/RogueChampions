@@ -125,6 +125,26 @@ export const Quicksilver: Expansion = {
 	encounterSets: [],
 }
 
+export const StarLord: Expansion = {
+	name: 'Star-Lord',
+	encounterSets: [],
+}
+
+export const Gamora: Expansion = {
+	name: 'Gamora',
+	encounterSets: [],
+}
+
+export const Drax: Expansion = {
+	name: 'Drax',
+	encounterSets: [],
+}
+
+export const AgentVenom: Expansion = {
+	name: 'Agent Venom',
+	encounterSets: [],
+}
+
 export const ExpansionsMap : Record<string, Expansion> = {
 	// Expansions
 	[CoreSet.name]: CoreSet,
@@ -146,7 +166,11 @@ export const ExpansionsMap : Record<string, Expansion> = {
 	[MsMarvel.name]: MsMarvel,
 	[ScarletWitch.name]: ScarletWitch,
 	[Wasp.name]: Wasp,
-	[Quicksilver.name]: Quicksilver
+	[Quicksilver.name]: Quicksilver,
+	[StarLord.name]: StarLord,
+	[Gamora.name]: Gamora,
+	[Drax.name]: Drax,
+	[AgentVenom.name]: AgentVenom,
 }
 
 export const ExpansionsList = Object.keys(ExpansionsMap).map(key => ExpansionsMap[key]).sort((a,b) => {
