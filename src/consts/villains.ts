@@ -144,21 +144,25 @@ export const RonanTheAccuser : Villain = {
 }
 
 export const VillainsMap : Record<string, Villain> = {
+	// Core game
 	[Ultron.name]: Ultron,
 	[Rhino.name]: Rhino,
 	[Klaw.name]: Klaw,
 
+	// Villain Packs
 	[WreckingCrew.name]: WreckingCrew,
 	[GreenGoblin.name]: GreenGoblin,
 	[NormanOsborn.name]: NormanOsborn,
 	[Kang.name]: Kang,
 
+	// The Rise of Red Skull
 	[Crossbones.name] : Crossbones,
 	[AbsorbingMan.name] : AbsorbingMan,
 	[Taskmaster.name]: Taskmaster,
 	[Zola.name]: Zola,
 	[RedSkull.name]: RedSkull,
 
+	// Galaxy's Most Wanted
 	[Drang.name] : Drang,
 	[InfiltrateTheMuseum.name] : InfiltrateTheMuseum,
 	[EscapeTheMuseum.name]: EscapeTheMuseum,

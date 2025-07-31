@@ -141,6 +141,29 @@ export const AgentVenom : Hero = {
 	startingHP: 12,
 }
 
+export const Nebula : Hero = {
+	name: 'Nebula',
+	requires: "Nebula",
+	startingHP: 9,
+}
+
+export const WarMachine : Hero = {
+	name: 'War Machine',
+	requires: "War Machine",
+	startingHP: 10,
+}
+
+export const Valkyrie : Hero = {
+	name: 'Valkyrie',
+	requires: "Valkyrie",
+	startingHP: 10,
+}
+
+export const Vision : Hero = {
+	name: 'Vision',
+	requires: "Vision",
+	startingHP: 11,
+}
 
 export const HeroesMap : Record<string, Hero> = {
 	[AntMan.name]: AntMan,
@@ -165,7 +188,11 @@ export const HeroesMap : Record<string, Hero> = {
 	[StarLord.name]: StarLord,
 	[Gamora.name]: Gamora,
 	[Drax.name]: Drax,
-	[AgentVenom.name]: AgentVenom
+	[AgentVenom.name]: AgentVenom,
+	[Nebula.name]: Nebula,
+	[WarMachine.name]: WarMachine,
+	[Valkyrie.name]: Valkyrie,
+	[Vision.name]: Vision,
 }
 
 export const HeroesList = Object.keys(HeroesMap).
