@@ -49,6 +49,12 @@ export const GalaxysMostWanted : Expansion = {
 	]
 }
 
+export const MadTitanShadow : Expansion = {
+	name: 'Mad Titan\'s Shadow',
+	encounterSets: [
+	]
+}
+
 // Scenarios 
 export const GreenGoblin : Expansion = {
 	name: 'Green Goblin',
@@ -70,6 +76,12 @@ export const Kang : Expansion = {
 		EncounterSets.MasterOfTime.name,
 		EncounterSets.Anachronauts.name,
 		EncounterSets.Kang.name
+	]
+}
+
+export const TheHood : Expansion = {
+	name: 'The Hood',
+	encounterSets: [
 	]
 }
 
@@ -145,16 +157,38 @@ export const AgentVenom: Expansion = {
 	encounterSets: [],
 }
 
+export const Nebula: Expansion = {
+	name: 'Nebula',
+	encounterSets: [],
+}
+
+export const WarMachine: Expansion = {
+	name: 'War Machine',
+	encounterSets: [],
+}
+
+export const Valkyrie: Expansion = {
+	name: 'Valkyrie',
+	encounterSets: [],
+}
+
+export const Vision: Expansion = {
+	name: 'Vision',
+	encounterSets: [],
+}
+
 export const ExpansionsMap : Record<string, Expansion> = {
 	// Expansions
 	[CoreSet.name]: CoreSet,
 	[RiseOfRedSkull.name]: RiseOfRedSkull,
 	[GalaxysMostWanted.name]: GalaxysMostWanted,
+	[MadTitanShadow.name]: MadTitanShadow,
 
 	// Villain packs
 	[GreenGoblin.name]: GreenGoblin,
 	[WreckingCrew.name]: WreckingCrew,
 	[Kang.name]: Kang,
+	[TheHood.name]: TheHood,
 
 	// Hero packs
 	[AntMan.name]: AntMan,
@@ -171,6 +205,10 @@ export const ExpansionsMap : Record<string, Expansion> = {
 	[Gamora.name]: Gamora,
 	[Drax.name]: Drax,
 	[AgentVenom.name]: AgentVenom,
+	[Nebula.name]: Nebula,
+	[WarMachine.name]: WarMachine,
+	[Valkyrie.name]: Valkyrie,
+	[Vision.name]: Vision
 }
 
 export const ExpansionsList = Object.keys(ExpansionsMap).map(key => ExpansionsMap[key]).sort((a,b) => {

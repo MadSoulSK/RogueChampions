@@ -1,11 +1,11 @@
 import {EncounterSet} from "@/types/encounterset";
-import {DF_STEP_LARGE, DF_STEP_SMALL, DF_BASE, DF_STEP_MED} from "@/consts/difficulty";
+import { DF_ES_EASY, DF_ES_HARD, DF_ES_MEDIUM } from "@/consts/difficulty";
 
 // Encounter sets marked as "boss: true" cannot be used as modular sets
 // Their difficulty is 0 because the villain's difficulty is set in the villains.ts file
 
 // Helper to create an encounter quickly
-function quick(name: string, diff = DF_STEP_SMALL) : EncounterSet {
+function quick(name: string, diff = DF_ES_EASY) : EncounterSet {
 	const encounter = {
 		name: name,
 		difficulty: diff,
@@ -14,18 +14,6 @@ function quick(name: string, diff = DF_STEP_SMALL) : EncounterSet {
 	EncounterSetsMap[name] = encounter
 	EncounterSetsList.push(encounter)
 	return encounter
-}
-
-// Helper to quickly create a villain
-function boss(name: string, diffBonus = 0) : EncounterSet {
-	const up = {
-		name: name,
-		difficulty: DF_BASE + diffBonus,
-		boss: true,
-	}
-	EncounterSetsMap[name] = up
-	EncounterSetsList.push(up)
-	return up
 }
 
 export const Rhino : EncounterSet = {
@@ -49,20 +37,20 @@ export const Ultron : EncounterSet = {
 //Goblin
 export const RiskyBusiness : EncounterSet = {
 	name: 'Risky Business',
-	difficulty: DF_STEP_LARGE,
+	difficulty: 0,
 	boss: true
 }
 
 export const MutagenFormula : EncounterSet = {
 	name: 'Mutagen Formula',
-	difficulty: DF_STEP_SMALL,
+	difficulty: 0,
 	boss: true
 }
 
 //Wrecking Crew
 export const WreckingCrew : EncounterSet = {
 	name: 'Wrecking Crew',
-	difficulty: DF_BASE + DF_STEP_SMALL,
+	difficulty: 0,
 	boss: true,
 }
 
@@ -87,51 +75,51 @@ export const Taskmaster : EncounterSet = {
 
 export const Zola : EncounterSet = {
 	name: 'Zola',
-	difficulty: DF_STEP_MED,
+	difficulty: 0,
 	boss: true
 }
 
 export const RedSkull : EncounterSet = {
 	name: 'Red Skull',
-	difficulty: DF_STEP_LARGE,
+	difficulty: 0,
 	boss: true
 }
 
 //Kang
 export const Kang : EncounterSet = {
 	name: 'Kang',
-	difficulty: DF_STEP_MED,
+	difficulty: 0,
 	boss: true
 }
 
 //Galaxy's Most Wanted
 export const Drang : EncounterSet = {
 	name: 'Drang',
-	difficulty: DF_STEP_MED,
+	difficulty: 0,
 	boss: true
 }
 
 export const InfiltrateTheMuseum : EncounterSet = {
 	name: 'Infiltrate the Museum',
-	difficulty: DF_STEP_MED + 1,
+	difficulty: 0,
 	boss: true
 }
 
 export const EscapeTheMuseum : EncounterSet = {
 	name: 'Escape the Museum',
-	difficulty: DF_STEP_MED + 1,
+	difficulty: 0,
 	boss: true
 }
 
 export const Nebula : EncounterSet = {
 	name: 'Nebula',
-	difficulty: DF_STEP_LARGE,
+	difficulty: 0,
 	boss: true
 }
 
 export const RonanTheAccuser : EncounterSet = {
 	name: 'Ronan the Accuser',
-	difficulty: DF_STEP_LARGE + 2,
+	difficulty: 0,
 	boss: true
 }
 
@@ -140,152 +128,152 @@ export const RonanTheAccuser : EncounterSet = {
 
 export const BombScare : EncounterSet = {
 	name: 'Bomb Scare',
-	difficulty: 1,
+	difficulty: DF_ES_EASY,
 	boss: false
 }
 
 export const MastersOfEvil : EncounterSet = {
 	name: 'Masters of Evil',
-	difficulty: DF_STEP_MED + 1,
+	difficulty: DF_ES_MEDIUM,
 	boss: false
 }
 
 export const UnderAttack : EncounterSet = {
 	name: 'Under Attack',
-	difficulty: DF_STEP_MED + 1,
+	difficulty: DF_ES_MEDIUM,
 	boss: false
 }
 
 export const TheDoomsdayChair : EncounterSet = {
 	name: 'The Doomsday Chair',
-	difficulty: DF_STEP_LARGE,
+	difficulty: DF_ES_HARD - 1,
 	boss: false
 }
 
 export const Expert : EncounterSet = {
 	name: 'Expert',
-	difficulty: DF_STEP_LARGE,
+	difficulty: DF_ES_MEDIUM + 1,
 	boss: false,
 	dontCount: true
 }
 
 export const LegionOfHydra : EncounterSet = {
 	name: 'Legion of Hydra',
-	difficulty: DF_STEP_SMALL,
+	difficulty: DF_ES_HARD - 1,
 	boss: false
 }
 
 export const GoblinGimmicks : EncounterSet = {
 	name: 'Goblin Gimmicks',
-	difficulty: DF_STEP_LARGE,
+	difficulty: DF_ES_HARD - 1,
 	boss: false
 }
 
 export const AMessOfThings : EncounterSet = {
 	name: 'A Mess Of Things',
-	difficulty: DF_STEP_MED,
+	difficulty: DF_ES_MEDIUM,
 	boss: false
 }
 
 export const PowerDrain : EncounterSet = {
 	name: 'Power Drain',
-	difficulty: DF_STEP_MED - 1,
+	difficulty: DF_ES_MEDIUM - 1,
 	boss: false
 }
 
 export const RunningInterference : EncounterSet = {
 	name: 'Running Interference',
-	difficulty: DF_STEP_MED + 1,
+	difficulty: DF_ES_MEDIUM + 1,
 	boss: false
 }
 
 export const HydraAssault : EncounterSet = {
 	name: "Hydra Assault",
-	difficulty: DF_STEP_SMALL,
+	difficulty: DF_ES_EASY,
 	boss: false
 }
 
 export const WeaponMaster : EncounterSet = {
 	name: "Weapon Master",
-	difficulty: DF_STEP_SMALL,
+	difficulty: DF_ES_EASY,
 	boss: false
 }
 
 export const HydraPatrol : EncounterSet = {
 	name: "Hydra Patrol",
-	difficulty: DF_STEP_SMALL,
+	difficulty: DF_ES_EASY,
 	boss: false
 }
 
 export const ExperimentalWeapons : EncounterSet = {
 	name: "Experimental Weapons",
-	difficulty: DF_STEP_MED,
+	difficulty: DF_ES_MEDIUM,
 	boss: false
 }
 
 export const Anachronauts: EncounterSet = {
 	name: "Anachronauts",
-	difficulty: DF_STEP_MED + 1,
+	difficulty: DF_ES_MEDIUM + 1,
 	boss: false
 }
 
 export const MasterOfTime: EncounterSet = {
 	name: "Master of Time",
-	difficulty: DF_STEP_MED + 1,
+	difficulty: DF_ES_HARD - 1,
 	boss: false
 }
 
 export const Temporal: EncounterSet = {
 	name: "Temporal",
-	difficulty: DF_STEP_MED,
+	difficulty: DF_ES_MEDIUM,
 	boss: false
 }
 
 export const BandOfBadoon: EncounterSet = {
 	name: "Band Of Badoon",
-	difficulty: DF_STEP_MED - 1,
+	difficulty: DF_ES_MEDIUM - 1,
 	boss: false
 }
 
 export const GalacticArtefacts: EncounterSet = {
 	name: "Galactic Artefacts",
-	difficulty: DF_STEP_MED,
+	difficulty: DF_ES_MEDIUM,
 	boss: false
 }
 
 export const KreeMilitants: EncounterSet = {
 	name: "Kree Militants",
-	difficulty: DF_STEP_MED,
+	difficulty: DF_ES_MEDIUM + 1,
 	boss: false
 }
 
 export const MenagerieMedley: EncounterSet = {
 	name: "Menagerie Medley",
-	difficulty: DF_STEP_LARGE - 1,
+	difficulty: DF_ES_HARD - 1,
 	boss: false
 }
 
 export const SpacePirates: EncounterSet = {
 	name: "Space Pirates",
-	difficulty: DF_STEP_LARGE,
+	difficulty: DF_ES_HARD,
 	boss: false
 }
 
 export const BadoonHeadhunter: EncounterSet = {
 	name: "Badoon Headhunter",
-	difficulty: DF_STEP_LARGE,
+	difficulty: DF_ES_HARD,
 	boss: false
 }
 
 export const ShipCommand: EncounterSet = {
 	name: "Ship Command",
-	difficulty: DF_STEP_MED,
+	difficulty: DF_ES_MEDIUM,
 	boss: false
 }
 
 export const PowerStone: EncounterSet = {
 	name: "Power Stone",
-	difficulty: DF_STEP_MED + 1,
+	difficulty: DF_ES_MEDIUM + 1,
 	boss: false
 }
 

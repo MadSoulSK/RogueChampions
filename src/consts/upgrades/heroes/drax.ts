@@ -24,7 +24,7 @@ export const TooStubornToDie = generateUpgradeCard({
     card: "Too Stuborn to Die",
     requires: Expansion.name,
     requiresHero: Drax.name,
-    name: ""
+    name: "I Am Not Done Yet",
 })
 
 export const DwiTheetMastery = generateUpgradeCard({
