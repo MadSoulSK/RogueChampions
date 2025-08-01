@@ -1,5 +1,5 @@
 import {Hero} from "@/types/hero";
-import {CoreSet, RiseOfRedSkull, GalaxysMostWanted} from "@/consts/expansions";
+import {CoreSet, RiseOfRedSkull, GalaxysMostWanted, MadTitanShadow} from "@/consts/expansions";
 
 export const AntMan : Hero = {
 	name: 'Ant-Man',
@@ -141,6 +141,18 @@ export const AgentVenom : Hero = {
 	startingHP: 12,
 }
 
+export const Spectrum : Hero = {
+	name: 'Spectrum',
+	requires: MadTitanShadow.name,
+	startingHP: 11,
+}
+
+export const AdamWarlock : Hero = {
+	name: 'Adam Warlock',
+	requires: MadTitanShadow.name,
+	startingHP: 11,
+}
+
 export const Nebula : Hero = {
 	name: 'Nebula',
 	requires: "Nebula",
@@ -189,6 +201,8 @@ export const HeroesMap : Record<string, Hero> = {
 	[Gamora.name]: Gamora,
 	[Drax.name]: Drax,
 	[AgentVenom.name]: AgentVenom,
+	[Spectrum.name]: Spectrum,
+	[AdamWarlock.name]: AdamWarlock,
 	[Nebula.name]: Nebula,
 	[WarMachine.name]: WarMachine,
 	[Valkyrie.name]: Valkyrie,

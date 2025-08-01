@@ -40,7 +40,7 @@ export const TacTeam = generateCounterCardInPlay({
 export const SpiderGirlAlly = generateAllyCard({
 	name: 'Spider Friend',
 	card: 'Spider-Girl',
-	pronoun: 'she',
+	pronoun: 'her',
 	requires: RiseOfRedSkull.name,
 	levels: [{
 		damage: 0,

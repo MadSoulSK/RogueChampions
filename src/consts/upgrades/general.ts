@@ -270,7 +270,7 @@ export const CosmoAlly = generateAllyCard({
 	card: "Cosmo",
 	requires: StarLord.name,
 	name: "Guardian's Best Friend",
-	pronoun: "he",
+	pronoun: "him",
 	category: "General",
 	levels: []
 })
@@ -303,7 +303,7 @@ export const StarLordAlly = generateAllyCard({
 	card: "Star-Lord",
 	requires: AgentVenom.name,
 	name: "Captain Peter Sparrow",
-	pronoun: "he",
+	pronoun: "him",
 	category: "General",
 	levels: [{
 		damage: 1,

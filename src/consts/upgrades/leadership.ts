@@ -187,7 +187,7 @@ export const BetaRayBillAlly = generateAllyCard({
 	card: "Beta Ray Bill",
 	requires: StarLord.name,
 	name: "Beta Lightning",
-	pronoun: "he",
+	pronoun: "him",
 	category: "Leadership",
 	levels: [{
 		damage: 3,
@@ -208,7 +208,7 @@ export const YonduAlly = generateAllyCard({
 	card: "Yondu",
 	requires: StarLord.name,
 	name: "Space Hawkeye",
-	pronoun: "he",
+	pronoun: "him",
 	category: "Leadership",
 	levels: [{
 		damage: 1,
@@ -226,7 +226,7 @@ export const AdamWarlockAlly = generateAllyCard({
 	card: "Adam Warlock",
 	requires: StarLord.name,
 	name: "Locked War",
-	pronoun: "he",
+	pronoun: "him",
 	category: "Leadership",
 		levels: [{
 		damage: 2,

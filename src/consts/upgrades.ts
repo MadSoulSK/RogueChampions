@@ -23,8 +23,12 @@ import {Upgrades as groot } from "@/consts/upgrades/heroes/groot";
 import {Upgrades as starlord } from "@/consts/upgrades/heroes/starlord";
 import {Upgrades as gamora } from "@/consts/upgrades/heroes/gamora";
 import {Upgrades as drax } from "@/consts/upgrades/heroes/drax";
+import {Upgrades as agentvenom} from "@/consts/upgrades/heroes/agentvenom";
+import {Upgrades as spectrum} from "@/consts/upgrades/heroes/spectrum";
+import {Upgrades as adamwarlock} from "@/consts/upgrades/heroes/adamwarlock";
 
 import {Upgrade, UpgradeCategory} from "@/types/upgrade";
+import { AdamWarlock } from "./heroes";
 
 function addUpgrades (upgrades : Upgrade[]) {
 	upgrades.forEach((upgrade) => {
@@ -58,6 +62,9 @@ addUpgrades(groot)
 addUpgrades(starlord)
 addUpgrades(gamora)
 addUpgrades(drax)
+addUpgrades(agentvenom)
+addUpgrades(spectrum)
+addUpgrades(adamwarlock)
 
 export const UpgradesList = Object.keys(UpgradesMap).map(key => {
 	return UpgradesMap[key]
