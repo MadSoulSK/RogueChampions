@@ -1,4 +1,4 @@
-import {CoreSet, GalaxysMostWanted, RiseOfRedSkull} from "@/consts/expansions";
+import {CoreSet, GalaxysMostWanted, MadTitanShadow, RiseOfRedSkull} from "@/consts/expansions";
 import {generateExhaustedCardInPlay, levelUpMessageIncrease, generateModifiedCounterCardInPlay, generateUpgradeCard, generateAllyCard, generateAllyWithHandEffectCard} from "@/lib/upgrades";
 import {Upgrade, UpgradeCategory} from "@/types/upgrade";
 import { AgentVenom, AntMan, BlackWidow, CaptainAmerica, Drax, Hulk, MsMarvel, Quicksilver, SpiderMan, StarLord, Thor, Wasp } from "../heroes";
@@ -328,6 +328,46 @@ export const PlasmaPistol = generateUpgradeCard({
 	category: "General"
 })
 
+export const MartinexAlly = generateAllyCard({
+	card: "Martinex",
+	requires: MadTitanShadow.name,
+	name: "Cold Logic",
+	pronoun: "him",
+	category: "General",
+	levels: [{
+		damage: 2,
+		exhausted: true,
+	}, {
+		damage: 0,
+		exhausted : false
+	}],
+})
+
+export const BladeAlly = generateAllyCard({
+	card: "Blade",
+	requires: MadTitanShadow.name,
+	name: "Daywalker",
+	pronoun: "him",
+	category: "General",
+	levels: [{
+		damage: 0,
+		exhausted: true,
+	}, {
+		damage: 0,
+		exhausted : false
+	}],
+})
+
+export const ReadyToRumble = generateUpgradeCard({
+	name: 'Rumble Mode',
+	card: "Ready to Rumble",
+	requires: MadTitanShadow.name,
+	article: 'a',
+	category: "General",
+})
+//TODO: for any hero?
+
+
 export const Upgrades = [
 	KnowYourEnemy,
 	Helicarrier,
@@ -352,5 +392,8 @@ export const Upgrades = [
 	AthleticConditioning,
 	StarLordAlly,
 	SideHolster,
-	PlasmaPistol
+	PlasmaPistol,
+	MartinexAlly,
+	BladeAlly,
+	ReadyToRumble
 ]

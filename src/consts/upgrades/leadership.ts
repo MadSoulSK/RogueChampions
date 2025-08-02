@@ -1,4 +1,4 @@
-import {AntMan, CaptainAmerica, CoreSet, RiseOfRedSkull} from "@/consts/expansions";
+import {AntMan, CaptainAmerica, CoreSet, MadTitanShadow, RiseOfRedSkull} from "@/consts/expansions";
 import {generateAllyCard, generateCounterCardInPlay, generateExhaustedCardInPlay, generateUpgradeCard} from "@/lib/upgrades";
 import {BlackWidow, Hawkeye, StarLord} from "@/consts/heroes";
 
@@ -228,7 +228,7 @@ export const AdamWarlockAlly = generateAllyCard({
 	name: "Locked War",
 	pronoun: "him",
 	category: "Leadership",
-		levels: [{
+	levels: [{
 		damage: 2,
 		exhausted : false
 	},{
@@ -240,6 +240,96 @@ export const AdamWarlockAlly = generateAllyCard({
 	}],
 })
 
+export const MightyAvengers = generateUpgradeCard({
+	name: 'Full Formation',
+	card: "Mighty Avengers",
+	requires: MadTitanShadow.name,
+	category: 'Leadership',
+})
+
+export const KaluuAlly = generateAllyCard({
+	card: "Kaluu",
+	requires: MadTitanShadow.name,
+	name: "Mystic Consultant",
+	pronoun: "him",
+	category: "Leadership",
+	levels: [{
+		damage: 1,
+		exhausted : false
+	},{
+		damage: 0,
+		exhausted : false
+	}]
+})
+
+export const WhiteTigerAlly = generateAllyCard({
+	card: "White Tiger",
+	requires: MadTitanShadow.name,
+	name: "Back in White",
+	pronoun: "her",
+	category: "Leadership",
+	levels: [{
+		damage: 1,
+		exhausted : false
+	},{
+		damage: 0,
+		exhausted : false
+	}]
+})
+
+export const PowerManAlly = generateAllyCard({
+	card: "Power Man",
+	requires: MadTitanShadow.name,
+	name: "One Punch Plan",
+	pronoun: "him",
+	category: "Leadership",
+	levels: [{
+		damage: 2,
+		exhausted : false
+	},{
+		damage: 1,
+		exhausted : false
+	},{
+		damage: 0,
+		exhausted : false
+	}],
+})
+
+export const CaptainAmericaAlly = generateAllyCard({
+	card: "Captain America",
+	requires: MadTitanShadow.name,
+	name: "America's Finest",
+	pronoun: "him",
+	category: "Leadership",
+	levels: [{
+		damage: 2,
+		exhausted : true
+	},{
+		damage: 1,
+		exhausted : true
+	},{
+		damage: 1,
+		exhausted : false
+	},{
+		damage: 0,
+		exhausted : false
+	}],
+})
+
+export const MajorVictoryAlly = generateAllyCard({
+	card: "Major Victory",
+	requires: MadTitanShadow.name,
+	name: "Galactic Standard",
+	pronoun: "him",
+	category: "Leadership",
+	levels: [{
+		damage: 0,
+		exhausted : true
+	},{
+		damage: 0,
+		exhausted : false
+	}]
+})
 
 export const Upgrades = [IKnowAHawkeye, WonderManAlly, TheTriskelion, Quinjet, RapidResponse, GoliathAlly, BlackKnightAlly, HawkeyeKateAlly, USAgentAlly, TeamTraining, GiantManAlly, 
-	RoninAlly, StingerAlly, BetaRayBillAlly, YonduAlly, AdamWarlockAlly]
+	RoninAlly, StingerAlly, BetaRayBillAlly, YonduAlly, AdamWarlockAlly, MightyAvengers, KaluuAlly, WhiteTigerAlly, PowerManAlly, CaptainAmericaAlly, MajorVictoryAlly]

@@ -1,4 +1,4 @@
-import {CoreSet, ExpansionsMap, GalaxysMostWanted, RiseOfRedSkull} from "@/consts/expansions";
+import {CoreSet, ExpansionsMap, GalaxysMostWanted, MadTitanShadow, RiseOfRedSkull} from "@/consts/expansions";
 import {generateAllyCard, generateCounterCardInPlay, generateExhaustedCardInPlay, generateUpgradeCard} from "@/lib/upgrades";
 import { BlackWidow, Hulk, Quicksilver, Thor, Wasp, Gamora} from "../heroes";
 
@@ -198,6 +198,21 @@ export const Godslayer = generateExhaustedCardInPlay({
 	pronoun: "it"
 })
 
+export const MarvelBoyAlly = generateAllyCard({
+	card: "Marvel Boy",
+	requires: MadTitanShadow.name,
+	name: "Blast Protocol",
+	pronoun: "him",
+	category: "Aggression",
+	levels: [{
+		damage: 0,
+		exhausted : true
+	},{
+		damage: 0,
+		exhausted : false
+	}]
+})
+
 export const Upgrades = [
 	ValhallasBlessing,
 	CombatTraining,
@@ -214,5 +229,6 @@ export const Upgrades = [
 	BugAlly,
 	FollowThrough,
 	HandCannon,
-	Godslayer
+	Godslayer,
+	MarvelBoyAlly
 ]

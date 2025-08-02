@@ -1,4 +1,4 @@
-import {CoreSet, RiseOfRedSkull} from "@/consts/expansions";
+import {CoreSet, MadTitanShadow, RiseOfRedSkull} from "@/consts/expansions";
 import {generateCounterCardInPlay, generateUpgradeCard, generateAllyCard, generateExhaustedCardInPlay, generateModifiedCounterCardInPlay} from "@/lib/upgrades";
 import { AgentVenom, BlackWidow, Hulk, Quicksilver, Thor } from "../heroes";
 
@@ -113,4 +113,22 @@ export const SonicRifle = generateModifiedCounterCardInPlay({
 	category: 'Justice',
 })
 
-export const Upgrades = [SurveillanceTeam, HeroicIntuition, UnderSurveillance, CounterIntelligence, QuakeAlly, BeatCop, SkilledInvestigator, SenseOfJustice, JackFlagAlly, SonicRifle]
+export const QuasarAlly = generateAllyCard({
+	card: "Quasar",
+	requires: MadTitanShadow.name,
+	name: "Light Lockdown",
+	pronoun: "him",
+	category: "Justice",
+	levels: [{
+		damage: 2,
+		exhausted: true,
+	}, {
+		damage: 1,
+		exhausted: false,
+	}, {
+		damage: 0,
+		exhausted: false,
+	}],
+})
+
+export const Upgrades = [SurveillanceTeam, HeroicIntuition, UnderSurveillance, CounterIntelligence, QuakeAlly, BeatCop, SkilledInvestigator, SenseOfJustice, JackFlagAlly, SonicRifle, QuasarAlly]

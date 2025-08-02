@@ -1,4 +1,4 @@
-import {CoreSet, GalaxysMostWanted} from "@/consts/expansions";
+import {CoreSet, GalaxysMostWanted, MadTitanShadow} from "@/consts/expansions";
 import {generateCounterCardInPlay, generateAllyCard, generateUpgradeCard, generateExhaustedCardInPlay} from "@/lib/upgrades";
 import { BlackWidow, DoctorStrange, Drax, Hulk, MsMarvel, Quicksilver } from "../heroes";
 
@@ -231,6 +231,24 @@ export const MoondragonAlly = generateAllyCard({
 	}],
 })
 
+export const Charlie27Ally = generateAllyCard({
+	card: "Charlie-27",
+	requires: MadTitanShadow.name,
+	name: "Titanium Backbone",
+	pronoun: "him",
+	category: "Protection",
+	levels: [{
+		damage: 2,
+		exhausted : false
+	},{
+		damage: 1,
+		exhausted : false
+	},{
+		damage: 0,
+		exhausted : false
+	}],
+})
+
 
 export const Upgrades = [ArmoredVest, BlackWidowAlly, MedTeam, EnergyBarrier, NovaAlly, DefensiveStance, IronfistAlly, CleatAlly, TheNightNurse, Unflappable, ElectrostaticArmor, NervesOfSteel, StarhawkAlly, Dauntless, HardToIgnore, 
-	Indomitable, MartyrAlly, MoondragonAlly]
+	Indomitable, MartyrAlly, MoondragonAlly, Charlie27Ally]
